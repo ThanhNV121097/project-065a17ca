@@ -38,6 +38,8 @@ export default function CmsNewProduct() {
   const previewLabel = useContent("cms.add.preview");
   const alertsHeading = useContent("cms.add.alerts_heading");
   const noTarget = useContent("cms.add.no_target");
+  const submitLabel = useContent("cms.add.submit");
+  const backLabel = useContent("cms.add.back");
 
   const { items: targets } = useCollection<AlertTarget>("alerts", { pageSize: 5 });
 
