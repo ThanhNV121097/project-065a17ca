@@ -77,7 +77,7 @@ export default function Home() {
         </div>
 
         <div className="relative mt-10 h-[46vh] lg:mt-0 lg:h-auto">
-          <Picture src="/images/shelf.jpg" alt={useContent("hero.photo_alt")} loading="eager"
+          <Picture src="/images/shelf.jpg" alt={shelfAlt} loading="eager"
             width={853} height={1280}
             className="absolute inset-0 h-full w-full object-cover" />
         </div>
