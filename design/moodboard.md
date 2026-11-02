@@ -57,20 +57,11 @@ picture a few pixels. Native scrolling; nothing pinned.
 
 ## COMMITMENTS
 
-1. On the home page from 1024px up, the shelf photograph bleeds off the right edge of
-   the viewport, top edge to bottom edge, with no margin and no rounded corner.
-2. The hero's type column stops short of that photograph on a 1px hairline rule, and
-   every element in it — label, headline, line, the three frames — is on that one
-   left edge.
-3. Three tall product frames sit inside the hero with their names and prices, so the
-   first screen carries goods, not only a headline.
-4. Prices are 20px tabular figures, right-aligned in their own column so the digits
-   line up down the whole catalogue and the whole CMS table.
-5. Every product picture is a cut-out on the card's own paper — one ground, one 1/1
-   frame, one distance — never a photograph of a room inside a product tile.
-6. Section headings sit in the left margin beside their text, not above it, from
-   1024px up.
-7. Fraunces is the display face on every screen including the CMS — the one
-   house-style rule taken off, carried through the site.
-8. Adding a product in the CMS writes a confirmation row naming the Telegram group,
-   the product name and its price, in the shop's green.
+- On the home page from 1024px up, the shelf photograph bleeds off the right edge of the viewport, top edge to bottom edge, with no margin and no rounded corner.
+- The hero's type column stops short of that photograph on a 1px hairline rule, and every element in it — label, headline, line, the three frames — is on that one left edge.
+- Three tall product frames sit inside the hero with their names and prices, so the first screen carries goods, not only a headline.
+- Prices are 20px tabular figures, right-aligned in their own column so the digits line up down the whole catalogue and the whole CMS table.
+- Every product picture is a cut-out on the card's own paper — one ground, one 1/1 frame, one distance — never a photograph of a room inside a product tile.
+- Section headings sit in the left margin beside their text, not above it, from 1024px up.
+- Fraunces is the display face on every screen including the CMS — the one house-style rule taken off, carried through the site.
+- Adding a product in the CMS writes a confirmation row naming the Telegram group, the product name and its price, in the shop's green.
