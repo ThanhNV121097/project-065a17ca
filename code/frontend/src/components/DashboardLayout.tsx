@@ -134,7 +134,9 @@ export default function DashboardLayout({ title, nav, actions, children, brand }
           <div className="fixed inset-0 z-[60] overflow-y-auto bg-surface lg:hidden">
             <div className="flex items-center justify-end p-4">
               <button type="button" aria-label="Close" onClick={() => setOpen(false)}
-                className="rounded border border-line px-3 py-1.5 text-sm text-ink">✕</button>
+                className="inline-flex h-10 w-10 items-center justify-center rounded border border-line text-ink">
+                <Icon name="close" size={20} />
+              </button>
             </div>
             {menu}
           </div>,
