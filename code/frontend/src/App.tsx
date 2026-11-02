@@ -20,6 +20,19 @@ import PhotoCredits from "./components/PhotoCredits";
  * <PhotoCredits/>: the stock photos' credits, which their licences ask for.
  */
 export default function App() {
+  // The direction pages are not part of the site: they render alone, outside
+  // the shell that draws the header and the footer. Both are deleted once the
+  // owner has chosen a direction.
+  return (
+    <Routes>
+      <Route path="/directions-1" element={<DirectionShelf />} />
+      <Route path="/directions-2" element={<DirectionWindow />} />
+      <Route path="*" element={<Shell />} />
+    </Routes>
+  );
+}
+
+function Shell() {
   const links = useList<{ label: string; href: string }>("nav.links");
   const name = useContent("site.name");
   // The CTA's own target, from content.json. It used to be href="#contact"
