@@ -22,4 +22,4 @@ export default function Field({ id, label, hint, children }: {
 
 /** The one set of input classes every field on the site uses. */
 export const fieldClass =
-  "w-full appearance-none rounded-[var(--radius-sm)] border border-field bg-surface px-3 py-2.5 text-ink outline-none placeholder:text-ink-soft focus-visible:border-accent focus-visible:ring-2 focus-visible:ring-accent/30";
+  "w-full appearance-none rounded-[var(--radius-sm)] border border-field bg-surface px-3 py-2.5 text-ink outline-none placeholder:text-ink-soft focus-visible:border-accent focus-visible:ring-1 focus-visible:ring-accent";
