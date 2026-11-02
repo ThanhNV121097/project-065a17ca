@@ -22,7 +22,9 @@ export default function Home() {
   const added = useAdded();
   const { items, total, hasMore, loading, loadMore } = useCollection<Product & { description?: string }>(
     "products",
-    { pageSize: 8 },
+    // Nine a page: three stand in the window and six fill two rows of three,
+    // so no row of the catalogue is ever left half empty.
+    { pageSize: 9 },
   );
 
   // Products the owner added in the CMS this session stand ahead of the
