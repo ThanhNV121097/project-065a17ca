@@ -1,5 +1,9 @@
 # Directions — the shop's own catalogue
 
+CHOSEN: The window — the shop's edge is that it chose these things, and a short
+handful shown properly says that where a full price board does not; the warm paper
+and the single green also carry into the CMS without becoming a second design.
+
 Two readings of this business. The owner picks one; the next turn builds it.
 
 Working name on the page: **Shopfront**. The owner gave no name and the brief names
