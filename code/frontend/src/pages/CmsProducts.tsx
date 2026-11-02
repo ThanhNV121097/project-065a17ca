@@ -88,11 +88,11 @@ export default function CmsProducts() {
         caption={caption}
         exportName="products"
         columns={[
-          { key: "name", label: useContent("cms.products.col_name"), sortable: true },
-          { key: "description", label: useContent("cms.products.col_description"), secondary: true },
+          { key: "name", label: colName, sortable: true },
+          { key: "description", label: colDescription, secondary: true },
           {
             key: "price",
-            label: useContent("cms.products.col_price"),
+            label: colPrice,
             sortable: true,
             align: "right",
             render: (r) => <span className="tabular">{formatPrice(r.price)}</span>,
