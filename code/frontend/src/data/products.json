@@ -97,8 +97,8 @@
   },
   {
     "id": "glass-tumbler",
-    "name": "Glass tumbler",
-    "description": "Thick-walled, 250ml. Sold singly, so a set can be mended.",
+    "name": "Wine glass",
+    "description": "Thin-rimmed, 250ml. Sold singly, so a set can be mended.",
     "price": 85000,
     "image": "/images/products-glass-tumbler.png",
     "category": "",
