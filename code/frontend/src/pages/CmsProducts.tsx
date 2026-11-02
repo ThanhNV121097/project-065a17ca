@@ -99,7 +99,7 @@ export default function CmsProducts() {
           },
           {
             key: "sold_out",
-            label: useContent("cms.products.col_status"),
+            label: colStatus,
             render: (r) => (
               <Badge tone={r.sold_out ? "warn" : "good"}>
                 <span className="inline-flex items-center gap-1">
