@@ -142,7 +142,7 @@ export function DirectionWindow() {
           alt="The shop&apos;s shelves"
           style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "38% 30%" }}
         />
-        <div style={{ position: "absolute", left: -64, bottom: 72, background: ground, borderLeft: `2px solid ${accent}`, padding: "16px 22px", maxWidth: 290 }}>
+        <div style={{ position: "absolute", left: -64, top: 96, background: ground, borderLeft: `2px solid ${accent}`, padding: "16px 22px", maxWidth: 290 }}>
           <p style={{ margin: 0, font: "500 11px/1 Inter, sans-serif", letterSpacing: "0.12em", textTransform: "uppercase", color: accent }}>
             Owner sign-in
           </p>
