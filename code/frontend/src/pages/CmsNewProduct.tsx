@@ -36,6 +36,7 @@ export default function CmsNewProduct() {
   const required = useContent("cms.add.required");
   const sentLead = useContent("cms.add.sent");
   const previewLabel = useContent("cms.add.preview");
+  const previewEmpty = useContent("cms.add.preview_empty");
   const alertsHeading = useContent("cms.add.alerts_heading");
   const noTarget = useContent("cms.add.no_target");
   const submitLabel = useContent("cms.add.submit");
