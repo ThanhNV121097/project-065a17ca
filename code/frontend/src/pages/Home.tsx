@@ -40,17 +40,17 @@ export default function Home() {
           and takes its full height; the type column stops on a hairline. */}
       <section className="lg:grid lg:grid-cols-[minmax(0,1fr)_42vw] lg:items-stretch">
         <div className="px-[var(--gutter)] pb-14 pt-4 lg:border-r lg:border-line lg:pb-20">
-          <motion.p {...rise(0)} className="label text-accent">
+          <p {...rise(0)} className="rise label text-accent">
             <T k="hero.eyebrow" />
-          </motion.p>
-          <motion.h1 {...rise(0.08)} className="mt-4 max-w-[18ch] text-[length:var(--size-h1)]">
+          </p>
+          <h1 {...rise(1)} className="rise mt-4 max-w-[18ch] text-[length:var(--size-h1)]">
             <T k="hero.headline" />
-          </motion.h1>
-          <motion.p {...rise(0.16)} className="mt-5 max-w-[46ch] text-ink-soft">
+          </h1>
+          <p {...rise(2)} className="rise mt-5 max-w-[46ch] text-ink-soft">
             <T k="hero.sub" />
-          </motion.p>
+          </p>
 
-          <motion.ul {...rise(0.24)} className="mt-10 grid grid-cols-3 gap-4 lg:gap-6">
+          <ul {...rise(3)} className="rise mt-10 grid grid-cols-3 gap-4 lg:gap-6">
             {window3.map((p, i) => (
               <li key={p.id} data-record={`products:${p.id}`} className="flex flex-col">
                 <ProductImage src={p.image} alt={p.name} aspect="4/5" eager={i === 0}
