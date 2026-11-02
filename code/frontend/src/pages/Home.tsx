@@ -32,7 +32,7 @@ export default function Home() {
   const count = total + added.length;
 
   // Each element of the hero's column a beat after the one above it.
-  const rise = (step: number) => ({ className: "rise", style: { animationDelay: `${step * 0.08}s` } });
+  const rise = (step: number) => ({ style: { animationDelay: `${step * 0.08}s` } });
 
   return (
     <>
