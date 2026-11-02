@@ -1,4 +1,3 @@
-import { motion, useReducedMotion } from "framer-motion";
 import { T, useContent } from "../editable";
 import { useCollection } from "../data";
 import { Picture } from "../picture";
