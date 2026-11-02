@@ -33,6 +33,7 @@ export default function App() {
 
 function Shell() {
   const name = useContent("site.name");
+  const email = useContent("contact.email");
   const session = useSession();
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
