@@ -78,7 +78,7 @@ export function DirectionShelf() {
         <div style={{ flex: 1, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", borderTop: `1px solid ${line}`, marginLeft: 56 }}>
           {ITEMS.map((it, i) => (
             <article key={it.name} style={{ background: surface, borderRight: i < 3 ? `1px solid ${line}` : "none", display: "flex", flexDirection: "column", minHeight: 0 }}>
-              <div style={{ flex: 1, padding: 26, display: "flex", alignItems: "center", justifyContent: "center", minHeight: 0 }}>
+              <div style={{ flex: 1, padding: "18px 26px 8px", display: "flex", alignItems: "center", justifyContent: "center", minHeight: 0 }}>
                 <img src={it.img} alt={it.name} style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "center" }} />
               </div>
               <div style={{ padding: "0 22px 24px" }}>
