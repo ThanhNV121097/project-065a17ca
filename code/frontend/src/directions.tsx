@@ -61,21 +61,23 @@ export function DirectionShelf() {
       </aside>
 
       <div style={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0 }}>
-        <header style={{ padding: "52px 0 40px 56px", maxWidth: 1000 }}>
-          <p style={{ margin: 0, font: "500 11px/1 Inter, sans-serif", letterSpacing: "0.16em", textTransform: "uppercase", color: accent }}>
-            Four items in the shop
-          </p>
-          <h1 style={{ margin: "18px 0 0", font: "400 44px/1.05 Archivo, sans-serif", letterSpacing: "-0.02em", maxWidth: "18ch" }}>
-            Everything we have, with the price on it.
-          </h1>
-          <p style={{ margin: "16px 0 0", font: "400 16px/1.55 Inter, sans-serif", color: soft, maxWidth: "52ch" }}>
+        <header style={{ padding: "40px 0 30px 56px", display: "grid", gridTemplateColumns: "minmax(0, 1fr) 360px", alignItems: "end", gap: 48 }}>
+          <div>
+            <p style={{ margin: 0, font: "500 11px/1 Inter, sans-serif", letterSpacing: "0.16em", textTransform: "uppercase", color: accent }}>
+              Four items in the shop
+            </p>
+            <h1 style={{ margin: "16px 0 0", font: "400 44px/1.05 Archivo, sans-serif", letterSpacing: "-0.02em", maxWidth: "18ch" }}>
+              Everything we have, with the price on it.
+            </h1>
+          </div>
+          <p style={{ margin: 0, paddingRight: 56, font: "400 15px/1.55 Inter, sans-serif", color: soft }}>
             The shop adds each item itself. No cart, no forms — just the list, as it stands today.
           </p>
         </header>
 
         <div style={{ flex: 1, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", borderTop: `1px solid ${line}`, marginLeft: 56 }}>
           {ITEMS.map((it, i) => (
-            <article key={it.name} style={{ background: surface, borderRight: i < 3 ? `1px solid ${line}` : "none", display: "flex", flexDirection: "column", minHeight: 420 }}>
+            <article key={it.name} style={{ background: surface, borderRight: i < 3 ? `1px solid ${line}` : "none", display: "flex", flexDirection: "column", minHeight: 0 }}>
               <div style={{ flex: 1, padding: 26, display: "flex", alignItems: "center", justifyContent: "center", minHeight: 0 }}>
                 <img src={it.img} alt={it.name} style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "center" }} />
               </div>
