@@ -38,6 +38,11 @@ export default function CmsProducts() {
   const empty = useContent("cms.products.empty");
   const caption = useContent("cms.products.caption");
   const sentLabel = useContent("cms.products.last_sent");
+  const colName = useContent("cms.products.col_name");
+  const colDescription = useContent("cms.products.col_description");
+  const colPrice = useContent("cms.products.col_price");
+  const colStatus = useContent("cms.products.col_status");
+  const colAdded = useContent("cms.products.col_added");
 
   const { items, total, pages, loading } = useCollection<Row>("products", {
     page: t.page,
