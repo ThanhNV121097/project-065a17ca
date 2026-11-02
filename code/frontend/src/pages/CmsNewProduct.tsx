@@ -105,12 +105,12 @@ export default function CmsNewProduct() {
           <button type="submit" data-testid="add-product"
             className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-sm)] bg-accent px-5 py-3 text-accent-ink hover:opacity-90">
             <Icon name="plus" size={18} />
-            <span className="whitespace-nowrap"><T /></span>
+            <span className="whitespace-nowrap">{submitLabel}</span>
           </button>
 
           <Link to="/cms" className="inline-flex items-center gap-2 text-sm text-ink-soft hover:text-accent">
             <Icon name="back" size={16} />
-            <span>{useContent("cms.add.back")}</span>
+            <span>{backLabel}</span>
           </Link>
         </form>
 
