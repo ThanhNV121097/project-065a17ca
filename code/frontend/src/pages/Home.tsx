@@ -3,6 +3,7 @@ import { useCollection } from "../data";
 import { Picture } from "../picture";
 import ProductCard, { type Product } from "../components/ProductCard";
 import ProductImage from "../components/ProductImage";
+import Grid from "../components/Grid";
 import Reveal from "../components/Reveal";
 import Icon from "../components/Icon";
 import { formatPrice } from "../lib/format";
