@@ -78,6 +78,20 @@ h1, h2, h3, h4 {
   font-feature-settings: "tnum" 1;
 }
 
+/* The load moment: the hero's column rises 16px and fades in, each element a
+   beat after the one above. A CSS animation rather than a JS one, so a frame
+   drawn before the script settles still shows the page. */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+.rise {
+  animation: rise 0.5s var(--ease-out) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rise { animation: none; }
+}
+
 /* A small-caps label, the one structural device repeated on every screen. */
 .label {
   font-size: var(--size-label);
