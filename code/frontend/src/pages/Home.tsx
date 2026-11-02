@@ -86,13 +86,13 @@ export default function Home() {
           </div>
         </Reveal>
 
-        <ul className="mt-12 grid grid-cols-2 gap-x-6 gap-y-14 lg:grid-cols-4">
+        <Grid count={rest.length} max={4} phone={2} className="mt-12 gap-x-6 gap-y-14">
           {rest.map((p, i) => (
-            <Reveal as="li" key={p.id} delay={(i % 4) * 0.06}>
+            <Reveal key={p.id} delay={(i % 4) * 0.06}>
               <ProductCard product={p} />
             </Reveal>
           ))}
-        </ul>
+        </Grid>
 
         {loading && <p className="mt-10 text-sm text-ink-soft"><T k="catalogue.loading" /></p>}
         {hasMore && !loading && (
