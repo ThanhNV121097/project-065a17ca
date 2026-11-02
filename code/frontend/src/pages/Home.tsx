@@ -59,13 +59,13 @@ export default function Home() {
                 <span className="tabular mt-1 text-[length:var(--size-price)]">{formatPrice(p.price)}</span>
               </li>
             ))}
-          </motion.ul>
+          </ul>
 
-          <motion.p {...rise(0.32)} data-testid="catalogue-count"
-            className="mt-10 flex items-center gap-2 text-sm text-ink-soft">
+          <p {...rise(4)} data-testid="catalogue-count"
+            className="rise mt-10 flex items-center gap-2 text-sm text-ink-soft">
             <Icon name="store" size={16} />
             <span>{count} <T k="catalogue.count_suffix" /></span>
-          </motion.p>
+          </p>
         </div>
 
         <div className="relative mt-10 h-[46vh] lg:mt-0 lg:h-auto">
