@@ -24,11 +24,11 @@
     "_picture": "stand-in"
   },
   {
-    "id": "stoneware-plate",
-    "name": "Dinner plates, set of four",
-    "description": "Plain white, 26cm, stacked low enough for a small cupboard.",
-    "price": 640000,
-    "image": "/images/products-stoneware-plate.png",
+    "id": "stoneware-jug",
+    "name": "Stoneware jug",
+    "description": "One litre, glazed inside, a thumb rest on the handle.",
+    "price": 380000,
+    "image": "/images/products-stoneware-jug.png",
     "category": "",
     "sold_out": false,
     "added": "2026-10-26",
