@@ -31,14 +31,8 @@ export default function Home() {
   const rest = all.slice(3);
   const count = total + added.length;
 
-  const rise = (delay: number) =>
-    still
-      ? {}
-      : {
-          initial: { opacity: 0, y: 16 },
-          animate: { opacity: 1, y: 0 },
-          transition: { duration: 0.45, delay: Math.min(delay, 0.24), ease: [0.2, 0.7, 0.2, 1] as const },
-        };
+  // Each element of the hero's column a beat after the one above it.
+  const rise = (step: number) => ({ className: "rise", style: { animationDelay: `${step * 0.08}s` } });
 
   return (
     <>
