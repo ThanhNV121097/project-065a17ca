@@ -1,0 +1,6 @@
+[
+  { "path": "/", "name": "Home" },
+  { "path": "/login", "name": "Sign in" },
+  { "path": "/cms", "name": "Products", "auth": true },
+  { "path": "/cms/new", "name": "Add a product", "auth": true }
+]

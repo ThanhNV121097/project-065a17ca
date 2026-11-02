@@ -1,61 +1,100 @@
-import { useState } from "react";
-import { Link, Route, Routes } from "react-router-dom";
-import { T, useList, useContent } from "./editable";
+import { useEffect, useState } from "react";
+import { Link, Route, Routes, useLocation } from "react-router-dom";
+import { T, useContent } from "./editable";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
+import CmsProducts from "./pages/CmsProducts";
+import CmsNewProduct from "./pages/CmsNewProduct";
 import Logo from "./components/Logo";
 import MenuToggle from "./components/MenuToggle";
-import ContactDock from "./components/ContactDock";
+import MobileMenu from "./components/MobileMenu";
 import PhotoCredits from "./components/PhotoCredits";
+import Icon from "./components/Icon";
+import { PageViews } from "./site";
+import { useSession } from "./lib/session";
 
 /**
- * The shell the design replaces.
- *
- * This file is a placeholder so the scaffold builds and runs before the
- * design exists. The team rewrites it and adds components under
- * src/components/; what must stay is the rule every component follows: the
- * words come from content.json through <T/>, the colours from theme.css.
- *
- * The site has pages, not only a home page: each is a file in src/pages/ and
- * a <Route> below, sharing the header and footer. The footer keeps
- * <PhotoCredits/>: the stock photos' credits, which their licences ask for.
+ * Shopfront. Three screens the owner asked for: the public catalogue, the
+ * sign-in, and the CMS behind it — the CMS in its own application shell, with
+ * no marketing header and no footer.
  */
 export default function App() {
-  const links = useList<{ label: string; href: string }>("nav.links");
-  const name = useContent("site.name");
-  // The CTA's own target, from content.json. It used to be href="#contact"
-  // written into the JSX while `nav.cta.href` sat in the file unread — so a
-  // design that moved contact onto a page of its own changed the key, nothing
-  // read it, and the header's one button scrolled nowhere. A key nothing reads
-  // is worse than a missing key: it looks answered.
-  const cta = useContent("nav.cta.href") || "/";
-  const [open, setOpen] = useState(false);
   return (
-    <div className="min-h-screen bg-ground text-ink font-body">
-      <header className="mx-auto max-w-page px-[var(--gutter)] py-6 flex items-center justify-between">
+    <>
+      <PageViews />
+      <Routes>
+        <Route path="/cms" element={<CmsProducts />} />
+        <Route path="/cms/new" element={<CmsNewProduct />} />
+        <Route path="*" element={<Shell />} />
+      </Routes>
+    </>
+  );
+}
+
+function Shell() {
+  const name = useContent("site.name");
+  const email = useContent("contact.email");
+  const session = useSession();
+  const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+  useEffect(() => {
+    setOpen(false);
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  const to = session ? "/cms" : "/login";
+  return (
+    <div className="flex min-h-screen flex-col bg-ground text-ink font-body">
+      <header className="relative z-50 flex items-center justify-between px-[var(--gutter)] py-5">
         <Link to="/" aria-label={name}><Logo /></Link>
-        <nav className="hidden lg:flex items-center gap-6 text-sm">
-          {links.map((l, i) => <T key={i} k={`nav.links.${i}.label`} as="a" href={l.href} />)}
-          <T k="nav.cta.label" as="a" href={cta} className="rounded bg-accent px-4 py-2 text-accent-ink" />
+        <nav className="hidden items-center gap-6 text-sm lg:flex">
+          <Link to="/" className="hover:text-accent"><T k="nav.links.0.label" /></Link>
+          <Link to={to} data-testid="header-cms"
+            className="inline-flex items-center gap-2 rounded-[var(--radius-sm)] border border-ink px-4 py-2 hover:bg-ink hover:text-ground">
+            <Icon name="lock" size={16} />
+            <span className="whitespace-nowrap"><T k={session ? "nav.cms.label" : "nav.cta.label"} /></span>
+          </Link>
         </nav>
         <div className="flex items-center gap-1 lg:hidden">
           <MenuToggle open={open} onToggle={() => setOpen((o) => !o)} />
         </div>
       </header>
-      {open && (
-        <nav className="fixed inset-0 top-[88px] z-40 flex flex-col gap-6 bg-ground px-[var(--gutter)] py-10 text-2xl lg:hidden">
-          {links.map((l, i) => <T key={i} k={`nav.links.${i}.label`} as="a" href={l.href} />)}
-        </nav>
-      )}
-      <main className="mx-auto max-w-page px-[var(--gutter)] py-24">
+
+      <MobileMenu open={open} onClose={() => setOpen(false)}>
+        <Link to="/" className="text-2xl font-display"><T k="nav.links.0.label" /></Link>
+        <Link to={to} className="inline-flex items-center gap-2 text-2xl font-display">
+          <Icon name="lock" size={20} />
+          <T k={session ? "nav.cms.label" : "nav.cta.label"} />
+        </Link>
+      </MobileMenu>
+
+      <main className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<Home />} />
         </Routes>
       </main>
-      <footer className="mx-auto max-w-page px-[var(--gutter)] py-12 text-sm text-ink-soft border-t border-line">
-        <T k="footer.line" /> · {name}
-        <PhotoCredits className="mt-3" />
+
+      <footer className="mt-24 border-t border-line px-[var(--gutter)] py-10 text-sm text-ink-soft">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="flex flex-col gap-2">
+            <Logo />
+            <T k="footer.line" as="p" className="max-w-[42ch]" />
+          </div>
+          <ul className="flex flex-col gap-2">
+            <li className="flex items-center gap-2">
+              <Icon name="mail" size={16} />
+              <T k="contact.email" as="a" href={`mailto:${email}`} className="hover:text-accent" />
+            </li>
+            <li className="flex items-center gap-2">
+              <Icon name="lock" size={16} />
+              <Link to={to} className="hover:text-accent"><T k={session ? "nav.cms.label" : "nav.cta.label"} /></Link>
+            </li>
+          </ul>
+        </div>
+        <PhotoCredits className="mt-8" />
       </footer>
-      <ContactDock />
     </div>
   );
 }

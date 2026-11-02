@@ -1,3 +1,24 @@
 {
-  "collections": {}
+  "collections": {
+    "products": {
+      "label": "Products",
+      "fields": [
+        { "key": "name", "label": "Name", "type": "text" },
+        { "key": "description", "label": "Short description", "type": "longtext" },
+        { "key": "price", "label": "Price", "type": "price", "currency": "VND" },
+        { "key": "image", "label": "Photo", "type": "image" },
+        { "key": "category", "label": "Category (optional — leave empty for one flat list)", "type": "text" },
+        { "key": "sold_out", "label": "Sold out", "type": "bool" },
+        { "key": "added", "label": "Added", "type": "text" }
+      ]
+    },
+    "alerts": {
+      "label": "Where new products are announced",
+      "fields": [
+        { "key": "channel", "label": "Channel", "type": "text" },
+        { "key": "target", "label": "Group or person", "type": "text" },
+        { "key": "note", "label": "Note", "type": "text" }
+      ]
+    }
+  }
 }

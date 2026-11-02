@@ -1,0 +1,16 @@
+[
+  {
+    "id": "telegram-group",
+    "channel": "Telegram group",
+    "target": "",
+    "note": "Every product added in the CMS is announced here with its name and price.",
+    "_source": "assumed"
+  },
+  {
+    "id": "telegram-person",
+    "channel": "Telegram, one person",
+    "target": "",
+    "note": "",
+    "_source": "assumed"
+  }
+]
