@@ -118,8 +118,13 @@ export default function CmsNewProduct() {
           <div>
             <p className="label text-ink-soft">{previewLabel}</p>
             <div className="mt-4 max-w-[18rem]">
-              <ProductImage src={photo} alt={name || photoLabel} aspect="1/1"
-                slot="/images/products/new.png" caption={photoHint} />
+              {photo ? (
+                <ProductImage src={photo} alt={name || photoLabel} aspect="1/1" />
+              ) : (
+                <p className="flex aspect-square items-end rounded border border-line bg-surface p-4 text-sm text-ink-soft">
+                  {previewEmpty}
+                </p>
+              )}
               <h2 className="mt-4 text-xl">{name || nameLabel}</h2>
               <p className="mt-1 text-[0.9375rem] text-ink-soft">{description || descriptionLabel}</p>
               <p className="tabular mt-3 border-t border-line pt-3 text-right text-[length:var(--size-price)]">
