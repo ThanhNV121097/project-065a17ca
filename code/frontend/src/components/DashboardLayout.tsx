@@ -112,9 +112,9 @@ export default function DashboardLayout({ title, nav, actions, children, brand }
             onClick={() => setOpen(true)}
             aria-label="Sections"
             aria-expanded={open}
-            className="rounded border border-line px-2 py-1 text-ink lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded border border-line text-ink lg:hidden"
           >
-            ☰
+            <Icon name="menu" size={20} />
           </button>
           <h1 className="min-w-0 flex-1 truncate font-display text-xl text-ink">{title}</h1>
           {actions}
