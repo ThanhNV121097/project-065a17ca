@@ -18,6 +18,7 @@
       "photo": "Photo",
       "photo_hint": "The path of the photo, as the shop's files name it.",
       "preview": "How it will look on the catalogue",
+      "preview_empty": "The photo, the name and the price show here as you type.",
       "price": "Price",
       "price_hint": "In đồng, digits only — 180000 shows as 180.000 ₫.",
       "required": "A name, a short description and a price are needed.",
@@ -107,11 +108,11 @@
   "pages": {
     "cms": {
       "description": "The shop's product list: every thing on the shelf, its price and whether it is still selling.",
-      "title": "Products — Shopfront CMS"
+      "title": "Products"
     },
     "cmsnew": {
       "description": "Add a photo, a name, a short description and a price. The Telegram group is told.",
-      "title": "Add a product — Shopfront CMS"
+      "title": "Add a product"
     },
     "login": {
       "back": "Back to the catalogue",
@@ -124,7 +125,7 @@
       "password": "Password",
       "sub": "The catalogue is public; adding to it is not. Sign in and the CMS opens on the product list.",
       "submit": "Sign in",
-      "title": "Shop sign-in — Shopfront"
+      "title": "Shop sign-in"
     }
   },
   "site": {
