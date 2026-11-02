@@ -111,7 +111,7 @@ export default function CmsProducts() {
           },
           {
             key: "added",
-            label: useContent("cms.products.col_added"),
+            label: colAdded,
             sortable: true,
             align: "right",
             secondary: true,
