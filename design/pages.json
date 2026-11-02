@@ -1,4 +1,6 @@
 [
-  { "path": "/directions-1", "name": "The whole shelf" },
-  { "path": "/directions-2", "name": "The window" }
+  { "path": "/", "name": "Home" },
+  { "path": "/login", "name": "Sign in" },
+  { "path": "/cms", "name": "Products", "auth": true },
+  { "path": "/cms/new", "name": "Add a product", "auth": true }
 ]

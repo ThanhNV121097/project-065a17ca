@@ -1,0 +1,49 @@
+[
+  {
+    "name": "Read the catalogue and a price",
+    "steps": [
+      { "action": "open", "path": "/" },
+      { "action": "expect", "selector": "[data-testid='catalogue-count']", "text": "12" },
+      { "action": "expect", "selector": "[data-record='products:cast-iron-pan']", "text": "Cast iron pan" }
+    ]
+  },
+  {
+    "name": "Show the rest of the catalogue",
+    "steps": [
+      { "action": "open", "path": "/" },
+      { "action": "click", "selector": "[data-testid='show-more']" },
+      { "action": "expect", "selector": "[data-record='products:beeswax-candle']", "text": "Pillar candle" }
+    ]
+  },
+  {
+    "name": "Sign in as the shop",
+    "steps": [
+      { "action": "open", "path": "/login" },
+      { "action": "type", "selector": "#email", "value": "brian.ng.2305@gmail.com" },
+      { "action": "type", "selector": "#password", "value": "shopfront" },
+      { "action": "click", "selector": "[data-testid='sign-in']" },
+      { "action": "expect", "selector": "[data-testid='cms-total']", "text": "of 12" }
+    ]
+  },
+  {
+    "name": "Add a product and announce it",
+    "auth": true,
+    "steps": [
+      { "action": "open", "path": "/cms/new" },
+      { "action": "type", "selector": "#name", "value": "Enamel plate" },
+      { "action": "type", "selector": "#description", "value": "Enamel over steel, 22cm." },
+      { "action": "type", "selector": "#price", "value": "140000" },
+      { "action": "click", "selector": "[data-testid='add-product']" },
+      { "action": "expect", "selector": "[data-testid='telegram-sent']", "text": "Enamel plate" }
+    ]
+  },
+  {
+    "name": "Sign out of the CMS",
+    "auth": true,
+    "steps": [
+      { "action": "open", "path": "/cms" },
+      { "action": "click", "selector": "[data-testid='sign-out']" },
+      { "action": "expect", "selector": "[data-testid='sign-in']", "text": "Sign in" }
+    ]
+  }
+]
