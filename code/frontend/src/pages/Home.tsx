@@ -17,7 +17,6 @@ import { useAdded } from "../lib/mock/products";
  * the goods, a page at a time.
  */
 export default function Home() {
-  const still = useReducedMotion();
   const shelfAlt = useContent("hero.photo_alt");
   const added = useAdded();
   const { items, total, hasMore, loading, loadMore } = useCollection<Product & { description?: string }>(
