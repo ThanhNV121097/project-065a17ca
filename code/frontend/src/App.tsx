@@ -85,7 +85,7 @@ function Shell() {
           <ul className="flex flex-col gap-2">
             <li className="flex items-center gap-2">
               <Icon name="mail" size={16} />
-              <T k="contact.email" as="a" href={`mailto:${useContent("contact.email")}`} className="hover:text-accent" />
+              <T k="contact.email" as="a" href={`mailto:${email}`} className="hover:text-accent" />
             </li>
             <li className="flex items-center gap-2">
               <Icon name="lock" size={16} />
