@@ -47,7 +47,7 @@ function Shell() {
       <header className="relative z-50 flex items-center justify-between px-[var(--gutter)] py-5">
         <Link to="/" aria-label={name}><Logo /></Link>
         <nav className="hidden items-center gap-6 text-sm lg:flex">
-          <T k="nav.links.0.label" as={Link as never} {...{ to: "/" }} className="hover:text-accent" />
+          <Link to="/" className="hover:text-accent"><T k="nav.links.0.label" /></Link>
           <Link to={to} data-testid="header-cms"
             className="inline-flex items-center gap-2 rounded-[var(--radius-sm)] border border-ink px-4 py-2 hover:bg-ink hover:text-ground">
             <Icon name="lock" size={16} />
