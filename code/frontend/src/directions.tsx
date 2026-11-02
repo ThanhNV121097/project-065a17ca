@@ -123,12 +123,14 @@ export function DirectionWindow() {
         <div style={{ marginTop: "auto", paddingTop: 44, borderTop: `1px solid ${line}`, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 26 }}>
           {three.map((it) => (
             <article key={it.name}>
-              <div style={{ background: surface, aspectRatio: "3 / 4", display: "flex", alignItems: "center", justifyContent: "center", padding: 22, border: `1px solid ${line}` }}>
+              <div style={{ background: surface, aspectRatio: "4 / 5", display: "flex", alignItems: "center", justifyContent: "center", padding: 14 }}>
                 <img src={it.img} alt={it.name} style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "center 55%" }} />
               </div>
-              <h2 style={{ margin: "14px 0 0", font: "400 19px/1.2 Fraunces, serif", letterSpacing: "-0.01em" }}>{it.name}</h2>
-              <p style={{ margin: "4px 0 8px", font: "400 13px/1.45 Inter, sans-serif", color: soft }}>{it.note}</p>
-              <p style={{ margin: 0, font: "500 20px/1 Inter, sans-serif", color: accent, ...tab }}>{it.price} ₫</p>
+              <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 10, marginTop: 12, paddingBottom: 8, borderBottom: `1px solid ${line}` }}>
+                <h2 style={{ margin: 0, font: "400 19px/1.15 Fraunces, serif", letterSpacing: "-0.01em" }}>{it.name}</h2>
+                <p style={{ margin: 0, font: "500 20px/1 Inter, sans-serif", color: accent, whiteSpace: "nowrap", ...tab }}>{it.price} ₫</p>
+              </div>
+              <p style={{ margin: "8px 0 0", font: "400 13px/1.45 Inter, sans-serif", color: soft }}>{it.note}</p>
             </article>
           ))}
         </div>
